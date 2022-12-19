@@ -1,5 +1,8 @@
 package tpmundial;
 
+import java.util.LinkedList;
+import java.util.Scanner;
+
 public class Partido {
 	private int goles;
 	private int id;
@@ -50,6 +53,38 @@ public class Partido {
 	@Override
 	public String toString() {
 		return pais + " - " + pais2 + "\n" ;
+	}
+	
+	// PARTIDOS POR GRUPO, SE AGREGAN A LA LISTA DE PARTIDOS
+	public static void PartidosGrupo(LinkedList<Partido> partidos, LinkedList<Pais> paises, int id)  {
+		Scanner entrada = new Scanner(System.in);
+		int t=0;
+		Partido partido;
+		String op;
+		
+		for (int i = 1; i <4; i++) {
+			if (t <3) {
+				id++;
+				partido = new Partido(0, id, 0, paises.get(0), paises.get(i));
+				partidos.add(partido);
+				t++;
+				if (t == 3) {
+					i=0;
+				}
+			} else if (i != 1 && t<5) {
+				id++;
+				partido = new Partido(0, id, 0, paises.get(1), paises.get(i));
+				partidos.add(partido);
+				t++;
+				if (t == 5) {
+					i=2;
+				}
+			} else if (i != 1 && i !=2 ) {
+				id++;
+				partido = new Partido(0, id, 0, paises.get(2), paises.get(i));
+				partidos.add(partido);
+			}
+			}
 	}
 			
 }

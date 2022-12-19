@@ -146,7 +146,16 @@ public class Main {
 		LinkedList<Partido> partidoh = new LinkedList<>();
 		int id;
 		
-		PartidosGrupo(partidoa, grupoA, id=0);
+		Partido.PartidosGrupo(partidoa, grupoA, id=0);
+		Partido.PartidosGrupo(partidob, grupoB, id=6);
+		Partido.PartidosGrupo(partidoc, grupoC, id=12);
+		Partido.PartidosGrupo(partidod, grupoD, id=18);
+		Partido.PartidosGrupo(partidoe, grupoE, id=24);
+		Partido.PartidosGrupo(partidof, grupoF, id=30);
+		Partido.PartidosGrupo(partidog, grupoG, id=36);
+		Partido.PartidosGrupo(partidoh, grupoH, id=42);
+	
+		/*PartidosGrupo(partidoa, grupoA, id=0);
 		PartidosGrupo(partidob, grupoB, id=6);
 		PartidosGrupo(partidoc, grupoC, id=12);
 		PartidosGrupo(partidod, grupoD, id=18);
@@ -154,6 +163,7 @@ public class Main {
 		PartidosGrupo(partidof, grupoF, id=30);
 		PartidosGrupo(partidog, grupoG, id=36);
 		PartidosGrupo(partidoh, grupoH, id=42);
+		*/
 		LinkedList<Partido> partidos = new LinkedList<>();
 		partidos.addAll(partidoa);
 		partidos.addAll(partidob);
@@ -203,9 +213,11 @@ public class Main {
 					
 					break;
 				default:
-					System.out.println("Opcion invalida");
+					System.out.println("La opcion ingresada no es valida");
+					m=1;
 					break;
 				}
+				
 			} while (m!=0);
 			System.out.println("Gracias por participar!");
 			
@@ -244,7 +256,6 @@ public class Main {
 							System.out.println(partidos.get(i));
 						}
 					}
-					
 					break;
 				case 2:
 					String res;
@@ -257,7 +268,6 @@ public class Main {
 					else {
 						System.out.println("No hay nada para ver");
 					}
-					
 					break;
 
 				default:
@@ -335,6 +345,7 @@ public class Main {
 				System.out.println("Nos vemos pronto!");
 				break;
 			default:
+				System.out.println("Opcion invalida");
 				break;
 			}
 		}
@@ -372,7 +383,6 @@ public class Main {
 							System.out.println(partidos.get(i));
 						}
 					}
-					
 					break;
 				case 2:
 						ResultadosRandom(partidos, paises, apuesta);
@@ -454,40 +464,9 @@ public class Main {
 				System.out.println("Nos vemos pronto!");
 				break;
 			default:
+				System.out.println("Opcion invalida");
 				break;
 			}
-		}
-		
-		// partidos para ambos menu
-		public static void PartidosGrupo(LinkedList<Partido> partidos, LinkedList<Pais> paises, int id)  {
-			Scanner entrada = new Scanner(System.in);
-			int t=0;
-			Partido partido;
-			String op;
-			
-			for (int i = 1; i <4; i++) {
-				if (t <3) {
-					id++;
-					partido = new Partido(0, id, 0, paises.get(0), paises.get(i));
-					partidos.add(partido);
-					t++;
-					if (t == 3) {
-						i=0;
-					}
-				} else if (i != 1 && t<5) {
-					id++;
-					partido = new Partido(0, id, 0, paises.get(1), paises.get(i));
-					partidos.add(partido);
-					t++;
-					if (t == 5) {
-						i=2;
-					}
-				} else if (i != 1 && i !=2 ) {
-					id++;
-					partido = new Partido(0, id, 0, paises.get(2), paises.get(i));
-					partidos.add(partido);
-				}
-				}
 		}
 		
 		// resultados fase grupos metodo manual
@@ -2319,9 +2298,6 @@ public class Main {
 			} while (p!=1 && p!=2);
 			
 			}
-		
-		
-		
 		
 		
 }
